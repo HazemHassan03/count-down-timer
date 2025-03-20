@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Down Timer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link
+      rel="shortcut icon"
+      href="https://i.ibb.co/6Rn5WVg/lOGO-1.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="select-date">
+      <i class="back fa-solid fa-arrow-left"></i>
+      <div class="container">
+        <h1>Select Date and Time</h1>
+        <div class="inputs">
+          <input type="datetime-local" name="date" id="date" />
+        </div>
+        <button class="submit">
+          <i class="fa-solid fa-floppy-disk"></i> Save
+        </button>
+      </div>
+    </div>
+    <div class="container timer">
+      <h1>Count Down Timer</h1>
+      <p class="date">To 01/06/2025 04:00 PM</p>
+      <div class="timer">
+        <div class="days">
+          <div class="value">00</div>
+          <div class="title">Days</div>
+        </div>
+        <div class="hours">
+          <div class="value">00</div>
+          <div class="title">Hours</div>
+        </div>
+        <div class="minutes">
+          <div class="value">00</div>
+          <div class="title">Minutes</div>
+        </div>
+        <div class="seconds">
+          <div class="value">00</div>
+          <div class="title">Seconds</div>
+        </div>
+      </div>
+      <button class="change-date">
+        <i class="fa-solid fa-pen-to-square"></i> Change The Target Date
+      </button>
+      <a
+        class="copyright"
+        href="https://www.linkedin.com/in/hazemhassan03/"
+        target="_blank"
+        ><img src="https://i.ibb.co/2ZCCRcb/Copyright.png" alt="My Logo"
+      /></a>
+    </div>
+    <p class="message"></p>
+    <script src="js/script.js"></script>
+  </body>
+</html>

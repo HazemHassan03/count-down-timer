@@ -1,0 +1,271 @@
+:root {
+  --color1: #ff4d4d;
+  --color1-alt: #d94141;
+  --color2: #002b56;
+  --color2-alt: #012549;
+  --transition: 0.3s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background-color: var(--color2);
+  font-family: "Righteous", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+input,
+select {
+  font-family: "Righteous", sans-serif;
+}
+option[value="0"] {
+  display: none;
+}
+.container {
+  width: 90vw;
+  max-width: 450px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.copyright {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+.copyright img {
+  max-width: 300px;
+  display: block;
+  margin: auto;
+}
+
+.timer,
+.select-date {
+  transition: top var(--transition), transform var(--transition);
+  -webkit-transition: top var(--transition), transform var(--transition);
+  -moz-transition: top var(--transition), transform var(--transition);
+  -ms-transition: top var(--transition), transform var(--transition);
+  -o-transition: top var(--transition), transform var(--transition);
+}
+
+.timer h1,
+.select-date h1 {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.select-date {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 999;
+  background-color: var(--color1);
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transition: transform var(--transition);
+  -webkit-transition: transform var(--transition);
+  -moz-transition: transform var(--transition);
+  -ms-transition: transform var(--transition);
+  -o-transition: transform var(--transition);
+}
+.select-date.active {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+.select-date .back {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: opacity var(--transition);
+  -webkit-transition: opacity var(--transition);
+  -moz-transition: opacity var(--transition);
+  -ms-transition: opacity var(--transition);
+  -o-transition: opacity var(--transition);
+}
+.select-date .back.active {
+  display: block;
+}
+.select-date h1 {
+  font-size: 35px;
+}
+.select-date .inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.select-date .inputs input {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  color: var(--color2);
+  border: 2px solid transparent;
+  transition: border-color var(--transition);
+  -webkit-transition: border-color var(--transition);
+  -moz-transition: border-color var(--transition);
+  -ms-transition: border-color var(--transition);
+  -o-transition: border-color var(--transition);
+}
+.select-date .inputs input#date {
+  grid-column: span 3;
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+.select-date .inputs input:focus {
+  outline: none;
+}
+.select-date .inputs input.invalid {
+  border-color: var(--color2);
+}
+.select-date .submit,
+.timer .change-date {
+  outline: 0;
+  border: 0;
+  padding: 10px 20px;
+  background-color: var(--color2);
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  -webkit-transition: background-color var(--transition);
+  -moz-transition: background-color var(--transition);
+  -ms-transition: background-color var(--transition);
+  -o-transition: background-color var(--transition);
+}
+@media (hover: hover) {
+  .select-date .submit:hover {
+    background-color: var(--color2-alt);
+  }
+  .select-date .back:hover {
+    opacity: 0.7;
+  }
+}
+@media (hover: none) {
+  .select-date .submit:active {
+    background-color: var(--color2-alt);
+  }
+  .select-date .back:active {
+    opacity: 0.7;
+  }
+}
+
+.timer .date {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+.timer .timer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.timer .timer > div {
+  background-color: var(--color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  color: white;
+  font-size: 45px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.timer .timer > div .title {
+  font-size: 16px;
+}
+.timer .change-date {
+  margin-bottom: 20px;
+  background-color: var(--color1);
+}
+@media (hover: hover) {
+  .timer .change-date:hover {
+    background-color: var(--color1-alt);
+  }
+}
+@media (hover: none) {
+  .timer .change-date:active {
+    background-color: var(--color1-alt);
+  }
+}
+
+.message {
+  width: max-content;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, calc(100% + 20px));
+  -webkit-transform: translate(-50%, calc(100% + 20px));
+  -moz-transform: translate(-50%, calc(100% + 20px));
+  -ms-transform: translate(-50%, calc(100% + 20px));
+  -o-transform: translate(-50%, calc(100% + 20px));
+  z-index: 999;
+  background-color: white;
+  color: var(--color2);
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: transform var(--transition), background-color var(--transition);
+  -webkit-transition: transform var(--transition), background-color var(--transition);
+  -moz-transition: transform var(--transition), background-color var(--transition);
+  -ms-transition: transform var(--transition), background-color var(--transition);
+  -o-transition: transform var(--transition), background-color var(--transition);
+}
+.message.active {
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+}
+@media (max-width: 767px) {
+  .message {
+    font-size: 14px;
+  }
+}
