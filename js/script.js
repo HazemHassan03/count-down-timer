@@ -125,6 +125,7 @@ function showTimer(date) {
       showMessage(
         `<i class="fa-solid fa-trophy"></i> Hooray! You've reached your target date!`
       );
+      localStorage.removeItem("Date");
     }
   }, 1000);
   show();
